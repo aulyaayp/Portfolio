@@ -1,0 +1,210 @@
+/* ========================================================
+   THEME STYLING: SOFT YELLOW & PINK WITH CAPSULE HEADER
+   Aulya Yulia Putri - Information Systems Portfolio
+   ======================================================== */
+
+/* Aesthetic Google Fonts Import (Fredoka & Plus Jakarta Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  --font-heading: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Soft Butter Yellow Background with Pink Dot Grid & Subtle Stripes */
+body {
+  font-family: var(--font-body);
+  background-color: #fffcee;
+  background-image: 
+    repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(254, 240, 138, 0.22) 48px, rgba(254, 240, 138, 0.22) 96px),
+    radial-gradient(rgba(244, 114, 182, 0.35) 1.5px, transparent 1.5px);
+  background-size: 96px 96px, 24px 24px;
+  background-attachment: fixed;
+}
+
+/* Headings & Aesthetic Typography */
+h1, h2, h3, h4, .font-display, .font-aesthetic-title, .font-aesthetic {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.01em;
+}
+
+/* Waving Hand Wiggle Animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+}
+
+.animate-wiggle {
+  display: inline-block;
+  animation: wiggle 2.2s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #fffcee;
+}
+::-webkit-scrollbar-thumb {
+  background: #f472b6; /* Pastel Pink */
+  border-radius: 9999px;
+  border: 2px solid #fffcee;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777; /* Deep Pink */
+}
+
+/* ========================================================
+   FLOATING CAPSULE HEADER (Pill Navbar in Soft Pink)
+   ======================================================== */
+.capsule-header {
+  position: fixed;
+  top: 1.15rem;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.capsule-bar {
+  pointer-events: auto;
+  font-family: var(--font-heading);
+  background: #f9a8d4; /* Soft Pastel Pink Bar */
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(244, 114, 182, 0.4),
+              0 4px 10px -2px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.65rem;
+  width: 100%;
+  max-width: 56rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capsule-link {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  color: #500724; /* Deep Rose-Pink for high contrast */
+  transition: all 0.22s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.capsule-link:hover {
+  color: #ffffff;
+  background-color: rgba(236, 72, 153, 0.45);
+}
+
+/* Active tab style matching reference image (darker tab pill) */
+.capsule-link.active-tab {
+  background-color: #db2777; /* Rich dark-pink tab */
+  color: #ffffff !important;
+  box-shadow: 0 3px 10px rgba(219, 39, 119, 0.38);
+}
+
+/* Aesthetic Card with soft border and retro shadow */
+.aesthetic-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border: 2px solid #1e293b;
+  border-radius: 2.25rem;
+  box-shadow: 6px 6px 0px #1e293b;
+  position: relative;
+}
+
+/* Cards with clean white surface, soft pink border & gentle shadow */
+.glass-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid #fbcfe8;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 28px -8px rgba(244, 114, 182, 0.15),
+              0 4px 12px -3px rgba(0, 0, 0, 0.04);
+}
+
+/* Hero text gradient */
+.gradient-hero-text {
+  background: linear-gradient(135deg, #e11d48 0%, #db2777 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card hover scaling with soft shadow */
+.project-card, .cert-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.project-card:hover, .cert-card:hover {
+  transform: translateY(-4px);
+  border-color: #f472b6;
+  box-shadow: 0 16px 32px -10px rgba(244, 114, 182, 0.25);
+}
+
+/* Social link buttons */
+.social-icon-btn {
+  transition: all 0.25s ease;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px -6px rgba(244, 114, 182, 0.3);
+}
+
+/* Profile Avatar sizing */
+.profile-avatar-box {
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .profile-avatar-box {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+/* Hide scrollbar for clean filter horizontal scroll */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Horizontal swipeable bar */
+.scroll-touch-horizontal {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  cursor: grab;
+  scroll-snap-type: x proximity;
+}
+
+.scroll-touch-horizontal.active-dragging {
+  cursor: grabbing !important;
+  user-select: none;
+  scroll-behavior: auto;
+}
